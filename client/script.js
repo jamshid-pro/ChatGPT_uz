@@ -1,8 +1,6 @@
 import bot from "./assets/bot.svg";
 import user from "./assets/user.svg";
-import dotenv from "dotenv";
 
-dotenv.config();
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector("#chat_container");
@@ -79,7 +77,7 @@ const handleSubmit = async(e) => {
 
   loader(messageDiv);
 
-  const response = await fetch(process.env.API_URL, {
+  const response = await fetch("https://chatgpt-uz.onrender.com", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
